@@ -1,37 +1,31 @@
-# Manikandan P — AI Engineer Portfolio
+# Manikandan P — Portfolio
 
-Premium, resume-aligned portfolio built with Next.js, TypeScript, Tailwind CSS and Framer Motion.
+Dark cinematic portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, and a bottom-right **NVIDIA LLM chatbot**.
 
-## Positioning
-- AI Engineer
-- Agentic AI
-- Generative AI
-- RAG / LLM applications
-- NLP / Transformer-based ML
-- Python + FastAPI backend engineering
+## Setup
 
-## Featured projects
-1. Autonomous Software Engineering Agent (ASEA)
-2. E-Commerce Sentiment Analysis Engine — Sentipulse
-3. Medi+ Wellness — AI Healthcare Appointment & Assistant Platform
-
-## Run locally
 ```bash
 npm install
+cp .env.example .env.local
+```
+
+Add your NVIDIA API key from [build.nvidia.com](https://build.nvidia.com/):
+
+```
+NVIDIA_API_KEY=nvapi-...
+NVIDIA_MODEL=meta/llama-3.1-8b-instruct
+```
+
+Then:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000
+Open [http://localhost:3000](http://localhost:3000). The chatbot streams replies from NVIDIA NIM (`https://integrate.api.nvidia.com/v1`).
 
-## Production build
-```bash
-npm run build
-npm start
-```
+## Scripts
 
-## Deploy
-The project is structured for Vercel/Netlify-style Next.js deployment.
-
-## GitHub
-Repository target:
-https://github.com/ManikandanP9994/Portfoliogithub
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run start` — start production server

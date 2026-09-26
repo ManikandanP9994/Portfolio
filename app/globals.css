@@ -1,38 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root { color-scheme: dark; }
-html { scroll-behavior: smooth; }
+:root {
+  --background: #040814;
+  --foreground: #e8f0ff;
+  --muted: #94a3b8;
+  --card: rgba(10, 22, 48, 0.72);
+  --border: rgba(56, 189, 248, 0.18);
+  --accent: #38bdf8;
+  --accent-2: #2563eb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  background: #05070d;
-  color: #eef2ff;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100%;
 }
-::selection { background: rgba(103,232,249,.25); color: #fff; }
 
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 48px 48px;
+.mesh-bg {
+  background:
+    radial-gradient(900px 500px at 8% -10%, rgba(37, 99, 235, 0.35), transparent 55%),
+    radial-gradient(700px 420px at 92% 8%, rgba(14, 165, 233, 0.22), transparent 50%),
+    radial-gradient(800px 500px at 70% 90%, rgba(79, 70, 229, 0.18), transparent 55%),
+    linear-gradient(180deg, #020617 0%, #071226 40%, #040814 100%);
 }
-.glow {
-  box-shadow: 0 0 80px rgba(34,211,238,.12), 0 0 140px rgba(139,92,246,.10);
-}
+
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
-  border: 1px solid rgba(255,255,255,.09);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 32, 64, 0.78) 0%,
+    rgba(8, 18, 40, 0.62) 100%
+  );
+  border: 1px solid var(--border);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.04) inset,
+    0 18px 50px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(18px);
 }
-.text-gradient {
-  background: linear-gradient(90deg, #fff 0%, #a5f3fc 42%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+
+.glow-text {
+  text-shadow: 0 0 28px rgba(56, 189, 248, 0.35);
 }
-.pill {
-  border: 1px solid rgba(255,255,255,.11);
-  background: rgba(255,255,255,.045);
+
+.nav-pill {
+  box-shadow: 0 0 24px rgba(37, 99, 235, 0.45);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 999px;
 }
